@@ -14,6 +14,7 @@
   --blue-primary:#1a73b5;
   --blue-mid:#2d8fd4;
   --blue-light:#4da8e8;
+  --blue-lower:#62b3ecec;
   --blue-pale:#d6eaf8;
   --blue-ghost:#eaf4fc;
   --accent:#00c6ff;
@@ -174,11 +175,11 @@ h1,h2,h3,h4,h5,h6{font-family:'Exo 2',sans-serif;color:var(--blue-dark);line-hei
 .footer-logo{display:flex;align-items:center;gap:10px}
 .footer-logo svg{width:15rem;height:auto}
 .footer-logo img{width:15rem;height:auto}
-.footer-logo span{font-family:'Exo 2',sans-serif;font-weight:800;font-size:1.1rem;color:var(--white)}
+.footer-logo span{font-family:'Exo 2',sans-serif;font-weight:800;font-size:1.1rem;color:var(--gray-900)}
 .footer-socials{display:flex;gap:12px}
-.footer-socials a{width:40px;height:40px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;color:rgba(255,255,255,.5);font-size:1rem;text-decoration:none;transition:all .25s}
+.footer-socials a{width:40px;height:40px;display:flex;align-items:center;justify-content:center;background:var(--blue-lower);border:1px solid var(--blue-lower);border-radius:10px;color:#fff;font-size:1rem;text-decoration:none;transition:all .25s}
 .footer-socials a:hover{color:var(--accent);background:rgba(0,198,255,.1);border-color:rgba(0,198,255,.2);transform:translateY(-2px)}
-.footer-copy{font-size:.75rem;color:rgba(255,255,255,.3);text-align:center}
+.footer-copy{font-size:.75rem;color:var(--gray-900);text-align:center}
 
 /* ─── WHATSAPP FAB ─── */
 .whatsapp-fab{position:fixed;bottom:24px;right:24px;width:58px;height:58px;background:var(--whatsapp);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--white);font-size:1.7rem;text-decoration:none;box-shadow:0 6px 24px rgba(37,211,102,.35);z-index:1001;transition:all .25s;animation:fabPulse 2s ease infinite}
@@ -427,7 +428,7 @@ h1,h2,h3,h4,h5,h6{font-family:'Exo 2',sans-serif;color:var(--blue-dark);line-hei
           </div>
           <div class="contact-item">
             <div class="contact-item-icon"><i class="fas fa-envelope"></i></div>
-            <div><h4>E-mail</h4><p><a href="mailto:industrisaultraluz@gmail.com">industrisaultraluz@gmail.com</a></p></div>
+            <div><h4>E-mail</h4><p><a href="mailto:industriasultraluz@gmail.com">industriasultraluz@gmail.com</a></p></div>
           </div>
           <!-- <div class="contact-item">
             <div class="contact-item-icon"><i class="fas fa-globe"></i></div>
@@ -499,7 +500,7 @@ h1,h2,h3,h4,h5,h6{font-family:'Exo 2',sans-serif;color:var(--blue-dark);line-hei
       <a href="https://wa.me/5531983802509?text=Gostaria%20de%20solicitar%20um%20or%C3%A7amento" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
       <a href="mailto:industrisaultraluz@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
     </div>
-    <p class="footer-copy">&copy; 202<span id="yearBeggin"></span><span id="actualYear"></span> Serviços de Engenharia Ultraluz. Todos os direitos reservados.</p>
+    <p class="footer-copy">&copy; 20<span id="yearBeggin">11</span>-<span id="actualYear"></span> Serviços de Engenharia Ultraluz. Todos os direitos reservados.</p>
   </div>
 </footer>
 
@@ -535,6 +536,13 @@ function handleSubmit(){
   const text=`*Nova solicitação via site*%0A%0A*Nome:* ${encodeURIComponent(name)}%0A*E-mail:* ${encodeURIComponent(email)}%0A*Telefone:* ${encodeURIComponent(phone)}%0A*Serviço:* ${encodeURIComponent(service)}%0A*Mensagem:* ${encodeURIComponent(message)}`;
   window.open(`https://wa.me/5531983802509?text=${text}`,'_blank');
 }
+
+// Update actual year
+document.addEventListener('DOMContentLoaded', () => {
+  let actualYear = document.getElementById('actualYear');
+  const actualDate = new Date();
+  actualYear.innerText = actualDate.getFullYear();
+});
 </script>
 </body>
 </html>
